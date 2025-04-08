@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Главная";
+    var popularJobs = new[] {
+        "Электрик на дом",
+        "Ремонт стиралок",
+        "Мастер на час",
+        "Малярные работы"
+    };
+    var categories = new[] {
+        "Электрика", "Сантехника", "Уборка", "Ремонт", "Мебель", "Окна/Двери"
+    };
+}
+
+<div class="container py-4">
+   
+    <!-- Поиск -->
+    <div class="input-group mb-4">
+        <input type="text" class="form-control" placeholder="Поиск услуг...">
+        <button class="btn btn-outline-secondary" type="button">Найти</button>
+    </div>
+
+    <!-- Популярные услуги -->
+    <h4 class="mb-3">Популярные услуги</h4>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 mb-5">
+        @foreach (var job in popularJobs)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@job</h5>
+                        <p class="card-text">Описание услуги и краткая информация...</p>
+                        <a href="#" class="btn btn-sm btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Категории -->
+    <h4 class="mb-3">Категории</h4>
+    <div class="d-flex flex-wrap gap-3 mb-5">
+        @foreach (var category in categories)
+        {
+            <a href="#" class="btn btn-outline-dark">@category</a>
+        }
+    </div>
